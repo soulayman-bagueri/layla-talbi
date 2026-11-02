@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff0f5">
+    <title>Laylaaaa - Love</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<main class="screen">
+
+    <div class="petals" id="petals"></div>
+
+<div class="layla-rain" id="laylaRain"></div>
+
+    <section class="content">
+
+        <div class="heart-container">
+
+            <svg class="heart-svg"
+                 viewBox="0 0 400 360"
+                 xmlns="http://www.w3.org/2000/svg">
+
+                <defs>
+                    <filter id="pinkGlow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="5" result="blur"/>
+                        <feMerge>
+                            <feMergeNode in="blur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+
+                    <linearGradient id="heartGradient" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#ff9fc6"/>
+                        <stop offset="100%" stop-color="#d94f88"/>
+                    </linearGradient>
+                </defs>
+
+                <path
+                    class="heart-outline"
+                    d="M200 325
+                    C170 295 35 205 35 112
+                    C35 20 155 0 200 105
+                    C245 0 365 20 365 112
+                    C365 205 230 295 200 325Z"
+                    stroke="url(#heartGradient)"
+                    filter="url(#pinkGlow)"
+                />
+
+            </svg>
+
+            <button id="loveButton" class="love-button" disabled>
+                laylaaaa
+                <svg viewBox="0 0 24 24" class="button-heart">
+                    <path d="M12 21S2 14 2 7.5C2 2 9 1 12 6c3-5 10-4 10 1.5C22 14 12 21 12 21Z"/>
+                </svg>
+            </button>
+
+        </div>
+
+        <p class="subtitle" id="subtitle">
+           .
+        </p>
+
+    </section>
+
+    <!-- رسالة ليلى -->
+
+    <div class="message-overlay" id="messageOverlay">
+
+        <div class="message-box">
+
+            <!-- SVG Rose -->
+
+            <svg class="rose-svg"
+                 viewBox="0 0 200 220"
+                 xmlns="http://www.w3.org/2000/svg">
+
+                <defs>
+                    <linearGradient id="petalGradient" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#ffb2d0"/>
+                        <stop offset="100%" stop-color="#e64f91"/>
+                    </linearGradient>
+
+                    <linearGradient id="stemGradient" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#47976b"/>
+                        <stop offset="100%" stop-color="#91c99a"/>
+                    </linearGradient>
+                </defs>
+
+                <!-- Stem -->
+                <path d="M100 95 C98 135 108 165 100 205"
+                      fill="none"
+                      stroke="url(#stemGradient)"
+                      stroke-width="7"
+                      stroke-linecap="round"/>
+
+                <!-- Leaves -->
+                <path d="M100 158 C65 125 35 145 63 166 C78 174 92 166 100 158Z"
+                      fill="#68b982"/>
+
+                <path d="M103 178 C135 144 163 156 139 181 C125 190 112 183 103 178Z"
+                      fill="#4caa75"/>
+
+                <!-- Rose petals -->
+                <path d="M100 105 C54 90 55 42 89 39 C113 38 119 65 100 105Z"
+                      fill="url(#petalGradient)"/>
+
+                <path d="M100 105 C78 56 109 19 139 41 C158 60 133 92 100 105Z"
+                      fill="#f58bb6"/>
+
+                <path d="M100 105 C117 60 170 69 159 102 C151 126 122 119 100 105Z"
+                      fill="#e85b98"/>
+
+                <path d="M100 105 C61 120 36 93 54 69 C73 48 96 75 100 105Z"
+                      fill="#f7a0c2"/>
+
+                <path d="M100 105 C85 72 110 50 130 69 C149 91 122 112 100 105Z"
+                      fill="#d94384"/>
+
+                <path d="M100 105 C79 92 91 66 109 71 C126 77 120 99 100 105Z"
+                      fill="#ffb7d1"/>
+
+            </svg>
+
+            <h1 id="messageTitle">layla</h1>
+
+            <p>
+               achbalik alayla 3jbk hadchi wla la
+               kantmna i3jbk
+                <br><br>
+
+               had l9lb lidert rah 9sdtk nti
+                <br><br>
+
+               mhm achbalik fhadchi
+            </p>
+
+            <!-- SVG Heart -->
+            <svg class="small-heart"
+                 viewBox="0 0 100 90"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 82 C40 70 5 45 5 25 C5 0 37 0 50 25 C63 0 95 0 95 25 C95 45 60 70 50 82Z"/>
+            </svg>
+
+            <button id="closeButton">
+               soulayman bagueri
+            </button>
+
+        </div>
+
+    </div>
+
+</main>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>

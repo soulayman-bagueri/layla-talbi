@@ -1,0 +1,325 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: linear-gradient(135deg, #fff0f5, #ffd9e8, #fff5f8);
+}
+
+.screen {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.heart-container {
+    position: relative;
+    width: min(88vw, 430px);
+    aspect-ratio: 400 / 360;
+}
+
+.heart-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.heart-outline {
+    fill: rgba(255, 100, 160, 0.05);
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 1200;
+    stroke-dashoffset: 1200;
+    animation: drawHeart 5s ease-in-out forwards;
+}
+
+.love-button {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.5);
+    opacity: 0;
+    pointer-events: none;
+    border: none;
+    border-radius: 50px;
+    padding: 13px 23px;
+    background: linear-gradient(135deg, #f28ab5, #d94f88);
+    color: white;
+    font-size: 19px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 25px #e65c9860;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    white-space: nowrap;
+    z-index: 3;
+    min-height: 48px;
+}
+
+.button-heart {
+    width: 20px;
+    fill: white;
+}
+
+.love-button.show {
+    animation: buttonAppear 1s ease forwards;
+    pointer-events: auto;
+}
+
+.subtitle {
+    margin-top: 15px;
+    text-align: center;
+    color: #bd477b;
+    font-size: 15px;
+    line-height: 2;
+}
+
+.message-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    background: rgba(104, 43, 73, .35);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    visibility: hidden;
+    transition: .4s;
+    overflow-y: auto;
+}
+
+.message-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.message-box {
+    width: 100%;
+    max-width: 400px;
+    padding: 25px;
+    border-radius: 30px;
+    background: #fff8fb;
+    text-align: center;
+    box-shadow: 0 15px 60px #a9437140;
+    transform: translateY(30px) scale(.9);
+    transition: .4s;
+}
+
+.message-overlay.active .message-box {
+    transform: translateY(0) scale(1);
+}
+
+.rose-svg {
+    width: 125px;
+    height: 140px;
+    margin: 0 auto 8px;
+    display: block;
+    animation: roseAppear 1.2s ease;
+}
+
+.message-box h1 {
+    color: #d94f88;
+    margin-bottom: 15px;
+    font-size: 32px;
+}
+
+.message-box p {
+    color: #805066;
+    line-height: 2.1;
+    font-size: 15px;
+}
+
+.small-heart {
+    width: 38px;
+    margin: 15px auto;
+    display: block;
+    fill: #ed5796;
+    animation: heartbeat 1s infinite;
+}
+
+#closeButton {
+    border: none;
+    border-radius: 50px;
+    background: #e65c98;
+    color: white;
+    padding: 13px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    min-height: 48px;
+}
+
+.petal {
+    position: absolute;
+    top: -30px;
+    width: 20px;
+    height: 20px;
+    animation: fall linear forwards;
+    pointer-events: none;
+}
+
+.petal svg {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes drawHeart {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes buttonAppear {
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes heartbeat {
+    50% {
+        transform: scale(1.3);
+    }
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes roseAppear {
+    from {
+        opacity: 0;
+        transform: scale(.5) rotate(-15deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .screen {
+        padding: 15px;
+    }
+
+    .heart-container {
+        width: 94vw;
+    }
+
+    .message-box {
+        padding: 22px 17px;
+    }
+
+    .message-box p {
+        font-size: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .heart-outline {
+        animation-duration: .5s;
+    }
+
+    .petal {
+        display: none;
+    }
+
+    .love-button.show {
+        animation-duration: .3s;
+    }
+}
+/* LAYLA background rain */
+
+.layla-rain {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.layla-word {
+    position: absolute;
+    top: -100px;
+    color: rgba(217, 55, 125, 0.48);
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 8px;
+    direction: ltr;
+    white-space: nowrap;
+    text-shadow:
+        0 0 8px rgba(255, 90, 160, 0.45),
+        0 0 20px rgba(255, 90, 160, 0.25);
+    animation: laylaFall linear forwards;
+    pointer-events: none;
+}
+
+@media (max-width: 480px) {
+    .layla-word {
+        font-size: 24px;
+        letter-spacing: 5px;
+    }
+}
+
+@keyframes laylaFall {
+    0% {
+        transform: translateY(-100px) rotate(-8deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(8deg);
+        opacity: 0;
+    }
+}
+
+/* Keep heart above the name rain */
+
+.content {
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 480px) {
+    .layla-word {
+        font-size: 17px;
+        letter-spacing: 3px;
+    }
+}
