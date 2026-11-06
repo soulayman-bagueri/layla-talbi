@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#16070d">
+  <title>LAYLA WORLD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <main id="app">
+    <section class="scene scene-one active" id="sceneOne" aria-label="LAYLA">
+      <div class="aurora aurora-one"></div>
+      <div class="star-field" id="particlesOne"></div>
+      <div class="name-stage">
+        <div class="name-rule"></div>
+        <h1 id="typingName" aria-label="LAYLA"></h1>
+        <div class="name-rule name-rule-bottom"></div>
+        <button class="next-button hidden" id="nextOne" type="button">NEXT <span>↗</span></button>
+      </div>
+      <div class="corner-mark">01 / 03</div>
+    </section>
+
+    <section class="scene scene-two" id="sceneTwo" aria-label="A rose">
+      <div class="scene-glow glow-two"></div>
+      <div class="rose-stage" id="flowerGarden">
+        <div class="rose-aura"></div>
+      </div>
+      <button class="next-button next-two hidden" id="nextTwo" type="button">NEXT <span>↗</span></button>
+      <div class="corner-mark">02 / 03</div>
+    </section>
+
+    <section class="scene scene-three" id="sceneThree" aria-label="LAYLA">
+      <div class="final-haze"></div>
+      <div class="final-floral-side left-side" id="leftFlowers"></div>
+      <div class="final-center">
+        <div class="final-ornament">✧</div>
+        <h2>LAYLA</h2>
+        <div class="final-line"><span></span><i>✦</i><span></span></div>
+      </div>
+      <div class="final-floral-side right-side" id="rightFlowers"></div>
+      <div class="corner-mark">03 / 03</div>
+    </section>
+  </main>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
